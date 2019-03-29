@@ -18,14 +18,14 @@ junit5:
 
 sample_profiler:
 	javac SampleProfilerApplication.java
-	$(SAMPLE_PROFILE_SETTINGS) SampleProfilerApplication 10000000
-	$(SAMPLE_HEAP_STATS_SETTINGS) SampleProfilerApplication 10000000
+	$(SAMPLE_PROFILE_SETTINGS) SampleProfilerApplication 1000000
+	$(SAMPLE_HEAP_STATS_SETTINGS) SampleProfilerApplication 1000000
 	ls -al *.jfr
 
 my_profiler:
 	javac MyProfiler.java
-	$(MY_PROFILE_SETTINGS) MyProfiler 10000000
-	$(MY_HEAP_STATS_SETTINGS) MyProfiler 10000000
+	$(MY_PROFILE_SETTINGS) MyProfiler 1000000
+	$(MY_HEAP_STATS_SETTINGS) MyProfiler 1000000
 	@echo "jmc -open my_profile.jfr"
 	@echo "jmc -open my_heap_stats_profile.jfr"
 
